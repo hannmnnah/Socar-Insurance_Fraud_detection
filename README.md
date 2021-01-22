@@ -82,7 +82,8 @@ Fraud Detection, Re-Sampling, Imbalanced Data, Clustering
 
 ## 2. 구조
 
-![Untitled Diagram (4)](https://user-images.githubusercontent.com/42338386/105090901-62b3ee80-5ae2-11eb-8fa3-443fc5e43625.png)
+![Architecture](https://user-images.githubusercontent.com/42338386/105468949-ea644d80-5cda-11eb-9caa-e490a4c60527.png)
+
 
 ## 3. Kick Insight
 
