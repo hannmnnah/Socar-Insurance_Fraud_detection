@@ -256,7 +256,7 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
   
   __1. Imbalanced data에 대한 다양한 Sampling 기법__  
   	* imblearn 패키지 :  
-	_- imblearn 패키지의 Over-Sampling(SMOTE, BorderlineSMOTE, ADASYN, Random-OverSampling) , Under-Sampling(ENN, CNN, 		Nearmiss, RandomUnderSampling, Tomeklinks), 그리고 pipeline을 통한 Combined-Sampling까지 데이터 셋에 최적화된 샘플링 모델을 찾기위해 각 모델들을 공부하고 적용하였습니다._ 
+	_- imblearn 패키지의 Over-Sampling(SMOTE, BorderlineSMOTE, ADASYN, Random-OverSampling) , Under-Sampling(ENN, CNN, 		Nearmiss, RandomUnderSampling, Tomeklinks), 그리고 pipeline을 통한 Combined-Sampling까지 데이터 셋에 최적화된 샘플링 모델을 찾기위해 각 모델들을 공부하고 적용하였습니다._   
 	* 데이터 내 노이즈, Outlier 제거를 통한 Under-Sampling  
 	* SCUT : 소수 클래스를 K-means Clustering 방법을 통해 multi class로 분리하고, 샘플링하는 방법
       
