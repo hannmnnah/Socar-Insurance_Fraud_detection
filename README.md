@@ -260,8 +260,8 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
 	- 데이터 내 노이즈, Outlier 제거를 통한 Under-Sampling  
 	- SCUT : 소수 클래스를 K-means Clustering 방법을 통해 multi class로 분리하고, 샘플링하는 방법
       
-   __2. Feature Selection 기준에 대한 다양한 접근법__
-   	- EDA 및 도메인 조사 내용을 기반으로 한 Feature Seletion
+   __2. Feature Selection 기준에 대한 다양한 접근법__  
+   	- EDA 및 도메인 조사 내용을 기반으로 한 Feature Seletion  
 	- Feature 랜덤 drop 실험을 통한 Feature 간 상관관계 분석
 	
    __3. 다양한 모델링 기법에 대한 경험적 지식__  
