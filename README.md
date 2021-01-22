@@ -68,7 +68,8 @@ Fraud Detection, Re-Sampling, Imbalanced Data, Clustering
 
 ### - 모델 성능 평가 지표 선정 : __" 높은 recall과 동시에 높은 accuracy"__
 
-	recall : 예측 보험 사기 / 실제 보험 사기, accuracy : 예측한 보험 사기 + 예측한 일반 사고 / 전체 데이터
+	* recall : 예측 보험 사기 / 실제 보험 사기
+	* accuracy : 예측한 보험 사기 + 예측한 일반 사고 / 전체 데이터
 		
 보통 불균형한 정도가 심한 데이터에서 사용하는 모델 성능 평가 지표는 recall 입니다.   
 전부 다 normal 사고라고 예측해도 accuracy는 1에 가까운 값이 나오는 탓입니다.  
