@@ -213,6 +213,7 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
   	- 비지도 학습인 군집 모델링을 바탕으로 샘플링 하는 방법입니다.
 	- Multi-Class Imbalanced Data Classification using SMOTE and Cluster-based Undersampling Technic
   
+
 <img src='https://user-images.githubusercontent.com/42338386/105412863-a2144380-5c78-11eb-9260-e3cc4018d19f.png' width='40%'></img>
 	
   
