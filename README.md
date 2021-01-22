@@ -184,7 +184,7 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
 	    X_test_ = X_test.drop([a,b,c,d, e,f, g, h, v , x, z1], axis=1)
 	    y_test = test['label']
 	    
-	    print('drop columns: {} / {} /{} / {} / {} / {} / {} / {} / {}/ {} / 		{}'.format(a,b,c,d,e, f, g, h, v, x, z1  ))
+	    print('drop columns: {} / {} /{} / {} / {} / {} / {} / {} / {}/ {} / {}'.format(a,b,c,d,e, f, g, h, v, x, z1  ))
 	
 	    smote = SMOTE(random_state=13, k_neighbors=30)
 	    X_train_over, y_train_over = smote.fit_sample(X_train_, y_train)
@@ -201,7 +201,8 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
 
   train-fraud 데이터의 아웃라이어를 어떻게 다뤄야할까 고민하였습니다.  
 
-  34개 데이터 중에 3~5개는 보통의 fraud 데이터와 떨어진 아웃라이어였습니다.
+  34개 데이터 중에 3~5개는 보통의 fraud 데이터와 떨어진 아웃라이어였습니다.  
+  
 <img src='https://user-images.githubusercontent.com/42338386/105457503-48d50000-5cca-11eb-9f7d-ecb200a17d8b.png' width='50%'></img>
 
 
@@ -304,7 +305,7 @@ __5. 비대면 업무 시 의사소통 방법__
 
 ### Team member github address
 - 서기현 : https://github.com/seogihyun
-- 김경한 : https://github.com/gyunghan_daren
+- 김경한 : https://github.com/darenkim
 - 장한아 : https://github.com/hannmnnah
 
 
