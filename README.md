@@ -20,6 +20,7 @@ Fraud Detection, Re-Sampling, Imbalanced Data, Clustering
 - [김경한] : EDA / feature select 알고리즘 구축 / train model & tuning : prediction 2 / 발표
 - [서기현] : EDA / 도메인 research / train model & tuning : prediction 1 / 발표
 - [장한아] : EDA / fraud 데이터 학습 사례 분석 / train model & tuning : prediction 3 / 발표 및 Readme 작성
+- [정현석] : Advisor | FastCampus project manager
 
 -------------------------------------------------------------------------------------------------------------------------------
 
