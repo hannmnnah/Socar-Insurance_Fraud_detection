@@ -254,33 +254,50 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
   	
 #### * 배운 점   
   
-  __1. Imbalanced data에 대한 다양한 Sampling 기법__  
-  	* imblearn 패키지 :  
-	_- imblearn 패키지의 Over-Sampling(SMOTE, BorderlineSMOTE, ADASYN, Random-OverSampling) , Under-Sampling(ENN, CNN, 		Nearmiss, RandomUnderSampling, Tomeklinks), 그리고 pipeline을 통한 Combined-Sampling까지 데이터 셋에 최적화된 샘플링 모델을 찾기위해 각 모델들을 공부하고 적용하였습니다._   
-	* 데이터 내 노이즈, Outlier 제거를 통한 Under-Sampling  
-	* SCUT : 소수 클래스를 K-means Clustering 방법을 통해 multi class로 분리하고, 샘플링하는 방법
-      
-   __2. Feature Selection 기준에 대한 다양한 접근법__  
-   	* EDA 및 도메인 조사 내용을 기반으로 한 Feature Seletion  
-	* Feature 랜덤 drop 실험을 통한 Feature 간 상관관계 분석
+  __1. Imbalanced data에 대한 다양한 Sampling 기법__    
+    
+   * imblearn 패키지 :  
+	_- imblearn 패키지의 Over-Sampling(SMOTE, BorderlineSMOTE, ADASYN, Random-OverSampling) , Under-Sampling(ENN, CNN, 		Nearmiss, RandomUnderSampling, Tomeklinks), 그리고 pipeline을 통한 Combined-Sampling까지 데이터 셋에 최적화된 샘플링 모델을 찾기위해 각 모델들을 공부하고 적용하였습니다._     
 	
+  * 데이터 내 노이즈, Outlier 제거를 통한 Under-Sampling    
+    
+  * SCUT : 소수 클래스를 K-means Clustering 방법을 통해 multi class로 분리하고, 샘플링하는 방법
+        
+	
+   __2. Feature Selection 기준에 대한 다양한 접근법__  
+   	  
+  * EDA 및 도메인 조사 내용을 기반으로 한 Feature Seletion  
+	  
+  * Feature 랜덤 drop 실험을 통한 Feature 간 상관관계 분석
+	  
+	  
    __3. 다양한 모델링 기법에 대한 경험적 지식__  
-   		* Decision Tree가 성능이 좋은데 RandomForest는 왜 성능이 안좋을까?  
-			_- 의사결정나무를 시각화해본 결과, 두 모델은 너무도 다른 feature를 선정하여 클래스를 분류하였습니다.  
-			- Imbalanced data set의 모델링 과정에서 발생한 현상이니, 비정상적인 현상은 아니라고 할 수 있습니다.  
-			- 이후, DecisionTreeClassifier에서 사용한 feature들만 RandomForest에 넣었을 때는 DecisionTreeClassifier와 유사한 성능을 보였습니다._  
-		* Support Vector Machine Classifier 커널 무한 로딩 문제  
-			_- 보통 SVC가 연산량이 많아 시간 소요가 되는 모델이라는 점을 감안해도, 과하게 오래 걸리는 문제가 발생했습니다.  
-			- 연산량을 줄어주기 위해 데이터 셋 스케일링을 적용하였더니, 비교적 짧은 시간에 모델 성능을 확인할 수 있었습니다.  
-			- 더불어, SVC보다 연산량이 적은 SVR 모델을 적용하였더니, 이 역시 비교적 짧은 시간에 모델 성능을 확인할 수 있었습니다._  
-		* Support Vector Machine : randomseed에 따라 성능이 많이 달라지는 현상  
-			_- 데이터 셋, 모델마다 randomseed에 따라 성능이 많이 달라지는 현상이 존재할 수 있다는 점을 학습하였습니다._  
-__4. Imbalanced Data Set 모델 성능 지표 해석 및 평가__  
-		* Imbalanced Data Set의 경우 일반적인 데이터 셋과 달리 Recall을 확보해야합니다.  
-			_- 다수 클래스로 몰린 예측을 해도, 데이터 셋의 대부분이 다수 클래스이기 때문에 accuracy가 높기 때문입니다.  
-			따라서 Imbalanced Data set의 경우, 높은 recall과 동시에 높은 accuracy를 확보하는 것이 중요합니다._
-
-   __5. 비대면 업무 시 의사소통 방법__
+   		  
+  * Decision Tree가 성능이 좋은데 RandomForest는 왜 성능이 안좋을까?  
+			  
+	_- 의사결정나무를 시각화해본 결과, 두 모델은 너무도 다른 feature를 선정하여 클래스를 분류하였습니다.  
+	- Imbalanced data set의 모델링 과정에서 발생한 현상이니, 비정상적인 현상은 아니라고 할 수 있습니다.  
+	- 이후, DecisionTreeClassifier에서 사용한 feature들만 RandomForest에 넣었을 때는 DecisionTreeClassifier와 유사한 성능을 보였습니다._  
+		  
+  * Support Vector Machine Classifier 커널 무한 로딩 문제  
+			  
+	_- 보통 SVC가 연산량이 많아 시간 소요가 되는 모델이라는 점을 감안해도, 과하게 오래 걸리는 문제가 발생했습니다.  
+	- 연산량을 줄어주기 위해 데이터 셋 스케일링을 적용하였더니, 비교적 짧은 시간에 모델 성능을 확인할 수 있었습니다.  
+	- 더불어, SVC보다 연산량이 적은 SVR 모델을 적용하였더니, 이 역시 비교적 짧은 시간에 모델 성능을 확인할 수 있었습니다._  
+		  
+  * Support Vector Machine : randomseed에 따라 성능이 많이 달라지는 현상     
+  
+  	_- 데이터 셋, 모델마다 randomseed에 따라 성능이 많이 달라지는 현상이 존재할 수 있다는 점을 학습하였습니다._  
+	
+__4. Imbalanced Data Set 모델 성능 지표 해석 및 평가__    
+  
+  * Imbalanced Data Set의 경우 일반적인 데이터 셋과 달리 Recall을 확보해야합니다.    
+    
+       _- 다수 클래스로 몰린 예측을 해도, 데이터 셋의 대부분이 다수 클래스이기 때문에 accuracy가 높기 때문입니다.    
+         따라서 Imbalanced Data set의 경우, 높은 recall과 동시에 높은 accuracy를 확보하는 것이 중요합니다._
+  
+  
+__5. 비대면 업무 시 의사소통 방법__
       
 
 ### Team member github address
