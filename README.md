@@ -279,7 +279,7 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
 	- Imbalanced data set의 모델링 과정에서 발생한 현상이니, 비정상적인 현상은 아니라고 할 수 있습니다.  
 	- 이후, DecisionTreeClassifier에서 사용한 feature들만 RandomForest에 넣었을 때는 DecisionTreeClassifier와 유사한 성능을 보였습니다.  
 		  
-  * Support Vector Machine Classifier 커널 무한 로딩 문제  
+  * Multi-Classes 분류일 때, Support Vector Machine Classifier 커널 무한 로딩 문제  
 			  
 	- 보통 SVC가 연산량이 많아 시간 소요가 되는 모델이라는 점을 감안해도, 과하게 오래 걸리는 문제가 발생했습니다.  
 	- 연산량을 줄어주기 위해 데이터 셋 스케일링을 적용하였더니, 비교적 짧은 시간에 모델 성능을 확인할 수 있었습니다.  
