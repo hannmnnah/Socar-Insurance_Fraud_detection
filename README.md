@@ -5,10 +5,8 @@
 - '뒷쿵', '공갈' ,'ㄷㅋ' 등으로 불리우는 보험 사기, 지난 2019년 기준 피해액은 8090억원(출처:금융감독원)에 달합니다.  
 렌터카 사고는 렌터카 업체의 보험료만 올라가고, 가해자의 자차 보험료에는 아무런 피해를 주지않는 점 때문에 렌터카가 범행의 수단이 되고 있습니다.  
 본 팀은 13000여개의 사고 데이터를 분석하여 보험 사기 사고를 예측했습니다.  
-  
-  해당 데이터 셋은 두 클래스가 1:379 (fraud-34:normal-12879)의 비율로 수집된 데이터로, 불균형적 데이터 셋입니다.  
-    
-   상세한 도메인 조사 및 EDA를 통한 feature engineering, 합리적인 feature selection, fraud 데이터 셋에 적합한 Sampling 알고리즘 구축, 최적의 모델 파라미터 튜닝, fraud 데이터 학습 사례 분석에 집중하여 과제를 해결했습니다. 
+- 해당 데이터 셋은 두 클래스가 1:379 (fraud-34:normal-12879)의 비율로 수집된 데이터로, 불균형적 데이터 셋입니다.  
+- 상세한 도메인 조사 및 EDA를 통한 feature engineering, 합리적인 feature selection, fraud 데이터 셋에 적합한 Sampling 알고리즘 구축, 최적의 모델 파라미터 튜닝, fraud 데이터 학습 사례 분석에 집중하여 과제를 해결했습니다. 
 
 ## keyword
 Fraud Detection, Re-Sampling, Imbalanced Data, Clustering
@@ -176,7 +174,7 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
 	- Multi-Class Imbalanced Data Classification using SMOTE and Cluster-based Undersampling Technic
   
 
-![scut](https://user-images.githubusercontent.com/42338386/107127038-cddd2d80-68f6-11eb-92a6-ce833b14dbe7.png)
+![scut](https://user-images.githubusercontent.com/42338386/107127758-a2a90d00-68fb-11eb-8e6a-a48f67669be1.png)
 	
   
   기존에 fraud, normal 두 클래스로 나눠졌던 라벨 대신 K-means clustering을 통해 학습한 군집 0:fraud, 1:fraud, 2:fraud, 3:normal 네 클래스의 라벨을 사용하여 모델링합니다.  
@@ -283,7 +281,7 @@ __5. 비대면 업무 시 의사소통 방법__
  
 ## 6. 참고 문헌
 
-- Jalal Ahammad, Nazia Hossain, January 2020, Credit Card Fraud Detection using Data Pre-processing on Imbalanced Data - both Oversampling and Undersampling(ICCA 2020: Proceedings of the International Conference on Computing Advancements, Article No.: 68, pp 1–4)
+- 1) Jalal Ahammad, Nazia Hossain, January 2020, Credit Card Fraud Detection using Data Pre-processing on Imbalanced Data - both Oversampling and Undersampling(ICCA 2020: Proceedings of the International Conference on Computing Advancements, Article No.: 68, pp 1–4)
 - 정한나, 이정화, 전치혁,March 2010, 불균형 이분 데이터 분류분석을 위한 데이터마이닝 절차 (포항공과대학교 산업경영공학과, Journal of the Korean Institute of Industrial Engineers Vol. 36, No. 1, pp. 13-21)
 - Astha Agrawal , Herna L. Viktor and Eric Paquet ,2015, SCUT: Multi-Class Imbalanced Data Classification using SMOTE and Cluster-based Undersampling (In Proceedings of the 7th International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management (IC3K 2015) - Volume 1: KDIR, pages 226-234 ISBN: 978-989-758-158-8)
   
