@@ -14,12 +14,14 @@
 Fraud Detection, Re-Sampling, Imbalanced Data, Clustering
 
 
-
 ## Built With
 
 - [김경한] : EDA / feature select 알고리즘 구축 / train model & tuning : prediction 2 / 발표
+	- https://github.com/darenkim
 - [서기현] : EDA / 도메인 research / train model & tuning : prediction 1 / 발표
+	- https://github.com/seogihyun
 - [장한아] : EDA / fraud 데이터 학습 사례 분석 / train model & tuning : prediction 3 / 발표 및 Readme 작성
+	- https://github.com/hannmnnah
 - [정현석] : Advisor | FastCampus project manager
 - [조용하] : Advisor | FastCampus project manager
 
@@ -55,7 +57,7 @@ Fraud Detection, Re-Sampling, Imbalanced Data, Clustering
 		
 	본 팀이 분석한 데이터 셋은 트레인 데이터 셋 클래스 비율이 1:379 (fraud-34:normal-12875)인 불균형 데이터 셋입니다. fraud 클래스의 수가 현저히 작아 모델이 학습 불가능합니다. 따라서 오버 샘플링을 포함하여 적절한 Re-Sampling 모델을 선택하여 두 클래스 간의 균형을 맞춰주는 것이 중요합니다.  
 	
-	<img src='https://user-images.githubusercontent.com/42338386/105316069-afdbb180-5c03-11eb-9b3d-bf6990c3a75d.png' width='70%'></img>
+	<img src='https://user-images.githubusercontent.com/42338386/107126537-ded86f80-68f3-11eb-8f0f-84196b2de610.png' width='50%'></img>
 	
 	
 
@@ -144,11 +146,11 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
   따라서 데이터의 노이즈를 줄이고 의미를 명확히 하기 위해 연속형 변수들을 3개(경미한 사고 =0,보통 사고 <=125만,대형 사고>125만)구간으로 나눠 명목형 변수로 custom하였습니다.  
   
   같은 데이터 셋 기준, 명목형 custom 여부에 대한 모델 결과 지표를 보았을 때, 성능이 확연히 좋아졌다는 것을 확인할 수 있습니다.
-  
-|way|model name| accuracy| recall | 
-|:--------:|:----------:|:-------------:|:---------------:|
-|original|DecisionTreeClassifier|0.95|0.0|
-|명목형으로 custom|DecisionTreeClassifier|0.77|0.85|
+
+
+		- {original : [DecisionTreeClassifier | acc : 0.95, recall : 0.0]}
+		- {명목형으로 custom : [DecisionTreeClassifier | acc : 0.77, recall : 0.85]} 
+
 
 ![repair_insure](https://user-images.githubusercontent.com/42338386/105408068-d801f980-5c71-11eb-8c8e-e70159ed5b88.png)
 
@@ -173,7 +175,7 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
 	- Multi-Class Imbalanced Data Classification using SMOTE and Cluster-based Undersampling Technic
   
 
-<img src='https://user-images.githubusercontent.com/42338386/105412863-a2144380-5c78-11eb-9260-e3cc4018d19f.png' width='40%'></img>
+![scut](https://user-images.githubusercontent.com/42338386/107127038-cddd2d80-68f6-11eb-92a6-ce833b14dbe7.png)
 	
   
   기존에 fraud, normal 두 클래스로 나눠졌던 라벨 대신 K-means clustering을 통해 학습한 군집 0:fraud, 1:fraud, 2:fraud, 3:normal 네 클래스의 라벨을 사용하여 모델링합니다.  
@@ -186,10 +188,10 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
   
   accuracy가 대폭 상승했다는 점에서 유의미합니다. fraud 데이터의 아웃라이어를 학습함으로써 normal 사고 예측 정확도가 높아진 것으로 추정합니다.
   
-  |way|model name| accuracy| recall | 
-|:--------:|:----------:|:-------------:|:---------------:|
-|단순 SMOTE|Logistic Regression|0.57|0.42|
-|SCUT|DecisionTreeClassifier|0.81|0.42|
+
+		- {단순 SMOTE : [Logistic Regression | acc : 0.57, recall : 0.42]}
+		- {SCUT : [DecisionTreeClassifier | acc : 0.81, recall : 0.42]} 
+
 
 
 
@@ -197,6 +199,7 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
 - 본 팀은 인사이트를 종합하여 최고의 모델을 선정하였습니다.
 
 - result
+
 |model name| train accuracy | train precision | train recall | test accuracy | test precision | test recall | 
 |:----------:|:-------------:|:---------------:|:---------------:|:---------------:|:---------------:|:---------------:|
 |DecisionTreeClassifier|0.825259|0.0006611|0.515151|0.77399|0.00930|0.81541
@@ -271,9 +274,5 @@ __4. Imbalanced Data Set 모델 성능 지표 해석 및 평가__
 __5. 비대면 업무 시 의사소통 방법__
       
 
-### Team member github address
-- 서기현 : https://github.com/seogihyun
-- 김경한 : https://github.com/darenkim
-- 장한아 : https://github.com/hannmnnah
 
 
