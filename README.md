@@ -34,6 +34,7 @@ Fraud Detection, Re-Sampling, Imbalanced Data, Clustering
 3. Kick Insight
 4. 모델 성능 결과 분석
 5. 배운 점
+6. 참고문헌
 
 
 ## 1. 문제 정의
@@ -162,7 +163,7 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
 
   34개 데이터 중에 3~5개는 보통의 fraud 데이터와 떨어진 아웃라이어였습니다.  
   
-<img src='https://user-images.githubusercontent.com/42338386/105457503-48d50000-5cca-11eb-9f7d-ecb200a17d8b.png' width='50%'></img>
+<img src='https://user-images.githubusercontent.com/42338386/107127291-8b1c5500-68f8-11eb-99d4-e797375c1707.png' width='50%'></img>
 
 
   이를 고려하지않고 샘플링한다면, 소수 클래스의 '소수'인 아웃라이어는 샘플링 모델이 학습하지 못합니다.  
@@ -271,7 +272,20 @@ __4. Imbalanced Data Set 모델 성능 지표 해석 및 평가__
          따라서 Imbalanced Data set의 경우, 높은 recall과 동시에 높은 accuracy를 확보하는 것이 중요합니다.
   
   
-__5. 비대면 업무 시 의사소통 방법__
+__5. 비대면 업무 시 의사소통 방법__  
+  
+  * discord를 통해 매일 오전에 작업 계획을 공유하고, 밤 10시 경에 zoom 회의를 통해 작업 결과 공유
+  * github을 활용하여 파일 공유 및 결과 업데이
+  
+  
+  
+ 
+## 6. 참고 문헌
+
+- Jalal Ahammad, Nazia Hossain, January 2020, Credit Card Fraud Detection using Data Pre-processing on Imbalanced Data - both Oversampling and Undersampling(ICCA 2020: Proceedings of the International Conference on Computing Advancements, Article No.: 68, pp 1–4)
+- 정한나, 이정화, 전치혁,March 2010, 불균형 이분 데이터 분류분석을 위한 데이터마이닝 절차 (포항공과대학교 산업경영공학과, Journal of the Korean Institute of Industrial Engineers Vol. 36, No. 1, pp. 13-21)
+- Astha Agrawal , Herna L. Viktor and Eric Paquet ,2015, SCUT: Multi-Class Imbalanced Data Classification using SMOTE and Cluster-based Undersampling (In Proceedings of the 7th International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management (IC3K 2015) - Volume 1: KDIR, pages 226-234 ISBN: 978-989-758-158-8)
+  
       
 
 
