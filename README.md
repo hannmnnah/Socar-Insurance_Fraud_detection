@@ -199,13 +199,14 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
 ## 4. Result
 - 본 팀은 인사이트를 종합하여 최고의 모델을 선정하였습니다.
 
-- result
-
 |model name| train accuracy | train precision | train recall | test accuracy | test precision | test recall | 
 |:----------:|:-------------:|:---------------:|:---------------:|:---------------:|:---------------:|:---------------:|
 |DecisionTreeClassifier|0.825259|0.0006611|0.515151|0.77399|0.00930|0.81541
 
--전처리?
+- __Feature Selection__ : 도메인 지식 + EDA 기반
+- __데이터 전처리__ : 1) 불필요 판단 컬럼 제거 , 2) noise 판단 데이터 부분 제거, 3) 명목형 변환, 4) OneHotEncoding
+- __Parameter Tuning__ : Decision Tree | random_state=13, max_depth=6
+
 
 
 
