@@ -118,8 +118,7 @@ BorderlineSmote와 TomekLinks, EditedNearestNeighbours이 그에 해당합니다
 		- {SMOTE : [DecisonTreeClassifier | acc : 0.85, recall : 0.14]}
 		- {BorderlineSMOTE : [Logistic Regression | acc : 0.65, recall : 0.85]} 
 
-![scatterplot](https://user-images.githubusercontent.com/42338386/105347275-0956d700-5c2a-11eb-94e5-660932cc6986.png) 
-
+![scatterplot](https://user-images.githubusercontent.com/42338386/107125670-abdfad00-68ee-11eb-8fbd-de3b5d3e44db.png) 
 
   다음의 scatterplot은 BorderSmote와 Under-Sampling모델을 혼합하여 사용한 결과를 요약합니다.  
 BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 것을 보아, fraud 인접의 normal 사고를 언더샘플링해주는 것이 모델의 예측률을 높인다는 사실을 확인하였습니다.
@@ -129,7 +128,7 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
 		- {ENN_12 : [Logistic Regression | acc : 0.71, recall : 0.71]}
 		- {ENN_13 : [Logistic Regression | acc : 0.66, recall : 0.85]} 
 
-![combined](https://user-images.githubusercontent.com/42338386/105401925-13002f00-5c6a-11eb-9361-2567a2595278.png)
+![combined](https://user-images.githubusercontent.com/42338386/107125886-c49c9280-68ef-11eb-8cf5-163b6756db94.png)
 
 
 
@@ -145,64 +144,17 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
   따라서 데이터의 노이즈를 줄이고 의미를 명확히 하기 위해 연속형 변수들을 3개(경미한 사고 =0,보통 사고 <=125만,대형 사고>125만)구간으로 나눠 명목형 변수로 custom하였습니다.  
   
   같은 데이터 셋 기준, 명목형 custom 여부에 대한 모델 결과 지표를 보았을 때, 성능이 확연히 좋아졌다는 것을 확인할 수 있습니다.
-
-		- {original : [DecisionTreeClassifier | acc : 0.95, recall : 0.0]}
-		- {명목형으로 custom : [DecisionTreeClassifier | acc : 0.77, recall : 0.85]}
+  
+|way|model name| accuracy| recall | 
+|:--------:|:----------:|:-------------:|:---------------:|
+|original|DecisionTreeClassifier|0.95|0.0|
+|명목형으로 custom|DecisionTreeClassifier|0.77|0.85|
 
 ![repair_insure](https://user-images.githubusercontent.com/42338386/105408068-d801f980-5c71-11eb-8c8e-e70159ed5b88.png)
 
- 
-### 3-4. __눈에 보이지 않는 상관관계로 연결된 features, 어떻게 셀렉해야 가장 합리적일까?__  
 
-   가장 효과적인 feature의 조합을 찾기 위해 EDA에 몰두하였으나, feature간의 상관관계는 EDA를 통해 분석하기 어려웠습니다.  
-    
-   본 팀은 눈으로 확인하기 어렵지만 가장 효과적인 feature의 조합을 찾기 위해  
-   10개의 feature를 랜덤으로 드롭하여 모델 성과 지표를 확인하는 실험을 400번 반복하였습니다.  
-     
-   이 실험은 feature selection에서 합리적인 의사결정을 할 수 있었던 베이스가 되었습니다.
-
-	```
-	cols= ['s1', 's2', 's3',
-       's4', 's5',
-       's7', 's8', 's9', 's10', 's11',
-       's12', 's13', 's16', 's17', 's18', 's19',
-       's20', 's21', 's22',
-       's23']
-
-	for _ in range(400):
-	    i, j , k , l, m, n, o, p, w, y, z = np.random.choice(20, 11, replace=False)
-	    a = cols[i]
-	    b= cols[j]
-	    c= cols[k]
-	    d= cols[l]
-	    e= cols[m]
-	    f = cols[n]
-	    g = cols[o]
-	    h = cols[p]
-	    v = cols[w]
-	    x = cols[y]
-	    z1 = cols[z]
-	    
-	    X_train_ = X_train.drop([a,b,c,d, e, f , g, h, v, x, z1], axis=1)
-	    y_train = train['label']
-	
-	    X_test_ = X_test.drop([a,b,c,d, e,f, g, h, v , x, z1], axis=1)
-	    y_test = test['label']
-	    
-	    print('drop columns: {} / {} /{} / {} / {} / {} / {} / {} / {}/ {} / {}'.format(a,b,c,d,e, f, g, h, v, x, z1  ))
-	
-	    smote = SMOTE(random_state=13, k_neighbors=30)
-	    X_train_over, y_train_over = smote.fit_sample(X_train_, y_train)
-	
-	    
-	
-	    results = get_result_pd(models, model_names, X_train_over, y_train_over, 	X_test_, y_test)
-	
-    print(results)
-    print("-------------------------------------------------------------")
-	```
-
-### 3-5.__train-fraud 데이터 34개 중 아웃라이어 1개, 어떻게 학습시켜야할까 ? : SCUT__  
+   
+### 3-4.__train-fraud 데이터 34개 중 아웃라이어 1개, 어떻게 학습시켜야할까 ? : SCUT__  
 
   train-fraud 데이터의 아웃라이어를 어떻게 다뤄야할까 고민하였습니다.  
 
@@ -233,15 +185,26 @@ BorderlineSMOTE로 오버샘플링만 했을 때보다, accuracy가 올라간 �
    일례로 단순 SMOTE로 샘플링 시에는 샘플링 이후에도 1개였던 train-fraud 데이터의 아웃라이어 's3'=5 데이터가, SCUT을 적용할 때에는 2869개로 오버 샘플링됩니다. 클래스를 나눠줌으로써 SMOTE 모델이 train-fraud 데이터의 아웃라이어를 학습 가능해졌기 때문입니다.
   
   accuracy가 대폭 상승했다는 점에서 유의미합니다. fraud 데이터의 아웃라이어를 학습함으로써 normal 사고 예측 정확도가 높아진 것으로 추정합니다.
-
-		- {단순 SMOTE : [Logistic Regression | acc : 0.57, recall : 0.42]}
-		- {SCUT : [DecisionTreeClassifier | acc : 0.81, recall : 0.42]}
+  
+  |way|model name| accuracy| recall | 
+|:--------:|:----------:|:-------------:|:---------------:|
+|단순 SMOTE|Logistic Regression|0.57|0.42|
+|SCUT|DecisionTreeClassifier|0.81|0.42|
 
 
 
 ## 4. Result
-- 본 팀은 인사이트를 종합하여 최고의 모델 세 가지를 선정하였습니다.
-![model_result](https://user-images.githubusercontent.com/42338386/105453353-55a22580-5cc3-11eb-9d56-130e914f71b7.png)
+- 본 팀은 인사이트를 종합하여 최고의 모델을 선정하였습니다.
+
+- result
+|model name| train accuracy | train precision | train recall | test accuracy | test precision | test recall | 
+|:----------:|:-------------:|:---------------:|:---------------:|:---------------:|:---------------:|:---------------:|
+|DecisionTreeClassifier|0.825259|0.0006611|0.515151|0.77399|0.00930|0.81541
+
+-전처리?
+
+
+
 
 
 
