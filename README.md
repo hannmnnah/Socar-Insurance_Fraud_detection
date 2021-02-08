@@ -46,7 +46,7 @@ Fraud Detection, Re-Sampling, Imbalanced Data, Clustering
 	
 	Socar의 무한한 안녕과 평안을 위해 렌터카 예약 데이터를 통해 보험 사기를 미리 예측하거나, 사고 후 집계된 데이터를 통해 보험 사고를 발견하는 모델은 보험 사기에 대응하기 위한 기반을 만들어줍니다.  
 	
-	<img src='https://user-images.githubusercontent.com/42338386/104930448-81ce5580-59e8-11eb-82b0-cf7fbf853ef1.png' width='70%'></img>
+	<img src='https://user-images.githubusercontent.com/42338386/107240799-a9f02800-6a6d-11eb-85c5-b79c119a2274.png' width='70%'></img>
 		
 - __Fraud Detection Model__  
 	  
