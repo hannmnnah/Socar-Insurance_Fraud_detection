@@ -14,12 +14,17 @@ Fraud Detection, Re-Sampling, Imbalanced Data, Clustering
 
 ## Built With
 
-- [김경한] : EDA / feature select 알고리즘 구축 / train model & tuning : prediction 2 / 발표
+- [김경한]
+	- EDA / feature select 알고리즘 구축 / train model & tuning : prediction 2 / 발표
 	- https://github.com/darenkim
-- [서기현] : EDA / 도메인 research / train model & tuning : prediction 1 / 발표
+- [서기현] 
+	- EDA / 도메인 research / train model & tuning : prediction 1 / 발표
 	- https://github.com/seogihyun
-- [장한아] : EDA / fraud 데이터 학습 사례 분석 / train model & tuning : prediction 3 / 발표 및 Readme 작성
-	- https://github.com/hannmnnah
+- [장한아] 
+	- EDA / fraud 데이터 학습 사례 분석 / train model & tuning : prediction 3 / 발표 및 Readme 작성
+	- https://github.com/hannmnnah. 
+	
+# Contributor
 - [정현석] : Advisor | FastCampus project manager
 - [조용하] : Advisor | FastCampus project manager
 
